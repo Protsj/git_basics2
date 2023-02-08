@@ -14,7 +14,6 @@ MENU_MULTI = MENU + ['eggs', 'sausages']  # including plurals
 JOINTS = [', and ', ', ', ' and ', ' with ', ' and double portion of ']
 PREFERED = MENU[0]  # that's what promoted most
 FORBIDDEN = {'not', 'without', 'no'}
-
 SONG = ', '.join([PREFERED.capitalize()] + [PREFERED] * DEF_CHOICE) + '!'
 
 D_WELCOME = ('Welcome to the Vikings restaurant.\n'
@@ -24,7 +23,6 @@ D_PROMOTE = "We highly recommend {dishes}" + f', and {PREFERED}...'
 D_GOOD = "That's a perfect choice. Let's have more {dishes}" + f', and {PREFERED}!'
 D_BAD = "Disgusting. Who eats {dishes}?"
 D_UNAVAILABLE = "That's not on our menu.\nWe have {dishes}."
-
 
 def dialog(num_choice=DEF_CHOICE):
     """User dialog logic."""
@@ -56,7 +54,6 @@ def dialog(num_choice=DEF_CHOICE):
     print(D_UNAVAILABLE.format(dishes=get_dishes(num_choice)))
     return
 
-
 def get_dishes(number):
     """Form a random combination of dishes"""
     sel = list(MENU)
@@ -71,9 +68,7 @@ def get_dishes(number):
 
     return ''.join(res)
 
-
 TIP = """Next time call "{script} num" to set number of dishes."""
-
 
 def main(args):
     script, *args = args
@@ -90,7 +85,6 @@ def main(args):
 
     if len(args) < 1:
         print('\tTip:', TIP.format(script=script))
-
 
 if __name__ == '__main__':
     import sys
